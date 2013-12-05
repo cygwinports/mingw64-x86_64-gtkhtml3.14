@@ -1,0 +1,20 @@
+CROSS_HOST="x86_64-w64-mingw32"
+ORIG_PN="gtkhtml"
+inherit cross gnome2
+
+NAME="mingw64-x86_64-gtkhtml3.14"
+VERSION=3.32.2
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="GNOME HTML rendering/printing/editing engine for Win64 toolchain"
+DESCRIPTION="GtkHTML is a lightweight HTML rendering/printing/editing engine.
+It was originally based on KHTMLW, part of the KDE project, but is now
+being developed independently."
+REQUIRES="mingw64-x86_64-iso-codes"
+HOMEPAGE="http://www.gnome.org/projects/evolution/"
+
+PATCH_URI="3.32.2-gthread.patch"
+
+CYGCONF_ARGS="--disable-deprecated-warning-flags"
+LIBS+=" -lgnurx"
+MAKEOPTS+=" bin_PROGRAMS= "
